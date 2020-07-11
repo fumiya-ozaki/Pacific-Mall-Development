@@ -1,5 +1,5 @@
 <article class="article-card">
-  <a class="card-link" href="<?php the_permalink();?>"></a>
+  <a class="card-link" href="<?php the_permalink();?>">
   <div class="image"><?php the_post_thumbnail('contribution');?></div>
   <div class="body">
     <time><?php the_time( 'Y.m.d' );?></time>
@@ -9,4 +9,5 @@
       <button type="button" class="seeDetail">MORE</button>
     </div>
   </div>
+  </a>
 </article>

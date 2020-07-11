@@ -3,8 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="keywords" content="共通キーワード" />
-  <meta name="description" content="<?php bloginfo( 'description' );?>" />
   <title><?php echo wp_get_document_title();?></title>
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/common/favicon.ico" />
   <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
@@ -16,7 +14,7 @@
     <header id="header">
       <div class="header-inner">
         <div class="logo">
-          <a class="logo-header" href="/">
+          <a class="logo-header" href="<?php echo home_url(); ?>">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-main.svg" class="main-logo" alt="PACIFIC MALL DEVELOPMENT" />
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-fixed.svg" class="fixed-logo" alt="PACIFIC MALL DEVELOPMENT" />
           </a>
@@ -35,9 +33,9 @@
             );
           ?>
           </nav>
-          <form class="search-form" role="search" method="get" action="">
+          <form class="search-form" role="search" method="get" action="<?php echo esc_url(home_url());?>">
             <div class="search-box">
-              <input type="text" class="search-input" name="" placeholder="キーワードを入力してください" />
+              <input type="text" class="search-input" name="s" placeholder="キーワードを入力してください" />
               <button type="submit" class="button-submit"></button>
             </div>
             <div class="search-buttons">
@@ -53,10 +51,8 @@
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-section-keyvisual.jpg" alt="MAIN IMAGE" />
       <div class="wrapper">
         <h1 class="site-title">Connecting the future.</h1>
-        <p class="site-caption">
-          私たちパシフィックモール開発は<br />
-          世界各地のショッピングモール開発を通じて<br />
-          人と人、人と地域を結ぶお手伝いをしています。
+        <p class="site-caption"><?php echo get_the_excerpt();?>
+
         </p>
       </div>
     </section>
@@ -73,4 +69,9 @@
               </div>
             </div>
             <div class="page-container">
+            <?php
+            if( function_exists('bread_crumb')):
+              bread_crumb();
+            endif;
+            ?>
     <?php endif; ?>
