@@ -31,6 +31,11 @@
             ?>
           </nav>
         </div>
+        <ul class="sns-navi">
+          <li class='twitter'><a href="https://twitter.com/5Wordpress"></a></li>
+          <li class="facebook"><a href="https://facebook.com/wordpress5book"></a></li>
+          <li class="instagram"><a href="https://instagram.com/5Wordpress"></a></li>
+        </ul>
       </div>
       <p class="copyright">
         <small class="copyright-text">&#169; 2019 PACIFIC MALL DEVELOPMENT CO.,LTD.</small>
